@@ -1,0 +1,116 @@
+@font-face {
+  font-family: "worksans";
+  src: url(./assets/fonts/WorkSans-VariableFont_wght.ttf);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: worksans;
+}
+.body {
+  /* background-image: url(./assets/images/background-pattern-desktop.svg); */
+}
+.center--div {
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  flex-direction: column;
+  /* max-height: 100dvh; */
+  max-width: 100vw;
+  width: fit-content;
+  /* height: fit-content; */
+  margin: 10rem auto;
+  inset: 0px;
+  position: fixed;
+  gap: 0.4rem;
+}
+.accordion {
+  max-width: 60rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  padding: 1rem;
+  background: hsl(0, 0%, 100%);
+  box-shadow: 1px 1px 40px hsla(292, 42%, 14%, 0.253);
+}
+.accordion--box {
+  padding: 0.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.accordion__head {
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  text-transform: capitalize;
+  /* max-width: 30ch; */
+  font-weight: 700;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: hsl(292, 42%, 14%);
+}
+.accordion__content {
+  max-height: 0;
+  /* display: none; */
+  overflow: hidden;
+  transition: 300ms ease-in-out;
+}
+
+.accordion--iconplus {
+  width: 1.5rem;
+  height: 1.5rem;
+  /* position: absolute;
+  right: 0; */
+}
+.accordion--iconminus {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.accordion__head::before {
+  /* content: url(./assets/images/icon-plus.svg); */
+  position: absolute;
+  right: 0;
+}
+.accordion__body {
+  line-height: 1.5;
+  font-size: clamp(0.9rem, 2vw, 1rem);
+  color: hsl(292, 16%, 49%);
+  height: fit-content;
+  padding: 0.6rem 0 0.6rem;
+  transition: 300ms ease-out;
+  /* display: none; */
+}
+.accordion--active {
+  /* font-size: 0; */
+  height: fit-content;
+  display: flex;
+  /* visibility: hidden; */
+}
+.faq {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-block-end: 2rem;
+  margin-inline-start: 0.5rem;
+}
+.faq__img {
+  width: 6%;
+  height: auto;
+}
+.faq__text {
+  font-size: clamp(1.3rem, 5vw, 3rem);
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+@media (max-width: 400px) {
+  .accordion {
+    margin: 10px;
+  }
+  .faq__img {
+    width: 12%;
+  }
+}
